@@ -3,8 +3,8 @@
 pkgname=toxic-git
 pkgdesc='CLI client for tox, a Skype replacement that respects your privacy'
 license=('GLPv3')
-pkgver=421.75d356e
-pkgrel=1
+pkgver=0.r471.be88c89
+pkgrel=2
 depends=('tox-git' 'ncurses')
 makedepends=('autoconf' 'git')
 conflicts=('toxic')
@@ -17,7 +17,7 @@ _gitname=toxic
 
 pkgver() {
     cd "${srcdir}/${_gitname}"
-    echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+    printf "0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
