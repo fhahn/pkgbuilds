@@ -1,11 +1,11 @@
 # Maintainer: Florian Hahn <flo@fhahn.com>
 
 pkgname=neovim-git
-pkgdesc="Vim's rebirth for the 21th century"
+pkgdesc="Vim's rebirth for the 21st century"
 license=('custom:vim')
 pkgver=0.r37.3d171b6
 pkgrel=1
-depends=('libuv' 'ncurses')
+depends=('libuv-git' 'ncurses')
 makedepends=('cmake' 'git')
 conflicts=('')
 provides=('neovim')
