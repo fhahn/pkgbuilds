@@ -3,8 +3,8 @@
 pkgname=toxic-git
 pkgdesc='CLI client for tox, a Skype replacement that respects your privacy'
 license=('GLPv3')
-pkgver=0.r471.be88c89
-pkgrel=2
+pkgver=0.r684.6ee1f1e
+pkgrel=1
 depends=('tox-git' 'ncurses')
 makedepends=('autoconf' 'git')
 conflicts=('toxic')

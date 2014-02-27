@@ -3,7 +3,7 @@
 pkgname=marelle-git
 pkgdesc='Test-driven system administration with a little extra logic.'
 license=('unknown')
-pkgver=0.r100.cf87c78
+pkgver=0.r113.ef862cd
 pkgrel=1
 depends=('swi-prolog' 'lsb-release')
 makedepends=('git')
