@@ -23,11 +23,11 @@ pkgver() {
 build() {
     cd "${srcdir}/${_gitname}"
     autoreconf -i
-    ./configure --with-libtoxcore-headers=/usr/include/tox 
+    ./configure --prefix=/usr --with-libtoxcore-headers=/usr/include/tox 
     make
 }
 
 package() {
     cd "${srcdir}/${_gitname}/build"
-    install -Dm755 toxic "${pkgdir}/usr/bin/toxic"
+    make DESTDIR="$pkgdir/" install
 }
