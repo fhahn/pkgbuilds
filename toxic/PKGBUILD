@@ -3,7 +3,7 @@
 pkgname=toxic-git
 pkgdesc='CLI client for tox, a Skype replacement that respects your privacy'
 license=('GLPv3')
-pkgver=0.r684.6ee1f1e
+pkgver=0.r773.d49e911
 pkgrel=1
 depends=('tox-git' 'ncurses')
 makedepends=('autoconf' 'git')
@@ -30,4 +30,6 @@ build() {
 package() {
     cd "${srcdir}/${_gitname}/build"
     make DESTDIR="$pkgdir/" install
+    mkdir -p "${pkgdir}/usr/share/toxic/"
+    install -Dm644 ../misc/DHTnodes "${pkgdir}/usr/share/toxic/"
 }
