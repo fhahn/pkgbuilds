@@ -26,8 +26,7 @@ pkgver() {
 
 build() {
   cd "${srcdir}/${_gitname}"
-  mkdir build && cd build
-  cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+  make cmake CMAKE_EXTRA_FLAG="-DCMAKE_INSTALL_PREFIX=/usr"
   make
 }
 
