@@ -1,0 +1,31 @@
+# Maintainer: Florian Hahn <flo@fhahn.com>
+
+pkgname=rust-coreutils-git
+pkgdesc='Cross-platform Rust rewrite of the GNU coreutils'
+license=('MIT')
+pkgver=0.r827.de4a28c
+pkgrel=1
+depends=('')
+makedepends=('rust-git' 'git')
+conflicts=('rust-coreutils-git')
+provides=('rust-coreutils-git')
+arch=('i686' 'x86_64')
+url=('https://github.com/uutils/coreutils')
+source=('git+https://github.com/uutils/coreutils.git')
+md5sums=('SKIP')
+_gitname=coreutils
+
+pkgver() {
+    cd "${srcdir}/${_gitname}"
+    printf "0.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+    cd "${srcdir}/${_gitname}"
+    make
+}
+
+package() {
+    cd "${srcdir}/${_gitname}/build"
+    make DESTDIR="${pkgdir}" install
+}
