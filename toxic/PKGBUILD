@@ -2,7 +2,7 @@
 
 pkgname=toxic-git
 pkgdesc='CLI client for tox, a Skype replacement that respects your privacy'
-license=('GLPv3')
+license=('GLP3')
 pkgver=0.r1009.e8a39e1
 pkgrel=1
 depends=('tox-git' 'ncurses')
@@ -13,6 +13,11 @@ arch=('i686' 'x86_64')
 url=('http://tox.im')
 source=('git+https://github.com/Tox/toxic.git')
 md5sums=('SKIP')
+optdepends=(
+  'openal: audio notifications'
+  'freealut: audio notifications'
+)
+
 _gitname=toxic
 
 pkgver() {
