@@ -3,7 +3,7 @@
 pkgname=lua-messagepack
 pkgdesc='A pure Lua implementation of msgpack.org.'
 license=('MIT')
-pkgver=0.r36.f44f954
+pkgver=0.r80.2351c82
 pkgrel=1
 depends=('lua')
 provides=('lua-messagepack')
@@ -20,7 +20,7 @@ pkgver() {
 }
 
 # nothing to build here, it's a pure lua implementation
-build() {}
+#build() {}
 
 package() {
     cd "${srcdir}/${_gitname}/"
